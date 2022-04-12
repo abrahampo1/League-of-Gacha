@@ -8,6 +8,8 @@ var bar = new ProgressBar.Line('#container',{
   svgStyle: {width: '100%', height: '100%'}});
 
 
+var mult = 1;
+
 function get_int(name, def = 0) {
   if (localStorage.getItem(name)) {
     if (localStorage.getItem(name) == 'NaN') {
@@ -112,14 +114,24 @@ setInterval(() => {
     dps += value['dps'] * value['nivel']
     set_int(
       'points',
-      get_int('points') + (value['dps'] * value['nivel']) / 10,
+      get_int('points') + ((value['dps'] * value['nivel']) / 10) * get_int('mult', 1),
       '.money-holder',
     )
   })
   $('.dps-holder').html('SPS: ' + dps)
+  
   $('.lvl-holder').html('NIVEL: ' + get_int('level'))
 }, 100)
 
+setInterval(() => {
+  let dps = 0
+  Object.entries(compras).forEach(([key, value]) => {
+    dps += value['dps'] * value['nivel']
+  })
+  set_int('xp', get_int('xp') + (dps/100))
+  calc_level()
+  
+}, 1000);
 function print_ej(params) {
   $('#ejercito').html('')
   Object.entries(compras).forEach(([key, value]) => {
@@ -133,8 +145,8 @@ function print_ej(params) {
     }
     let boton_fusion = ""
 
-    if (value['nivel'] >= value['fusion']) {
-      boton_fusion = `<button class="point-btn sml" onclick="fusionar('${key}')">Fusionar ${value['fusion']}</button>`
+    if (value['nivel'] >= arts[key]['fusion']) {
+      boton_fusion = `<button class="point-btn sml" onclick="fusionar('${key}')">Fusionar ${arts[key]['fusion']}</button>`
     }
     if (value['nivel'] > 0) {
       $('#ejercito').append(`
@@ -211,3 +223,24 @@ calc_level()
 print_box()
 print_ej()
 
+
+
+function evento(params) {
+  var item = eventos[Math.floor(Math.random()*eventos.length)];
+  console.log(item)
+  set_int('mult', get_int('mult', 1) * item['mult'])
+  swal({
+    title: item['titulo'],
+    text: item['cuerpo'],
+    icon: item['imagen'],
+  })
+  setTimeout(() => {
+    evento()
+  }, item['delay'] + getRandomArbitrary(10000, 300000));
+  return
+}
+
+
+setTimeout(() => {
+  evento()
+}, getRandomArbitrary(10000, 300000));

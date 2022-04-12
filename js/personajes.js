@@ -97,9 +97,9 @@ const arts = {
       key: 'Teemo',
     },
     Yummi: {
-      update: '',
+      update: 'yummi2',
       dps: 50,
-      fusion: 10,
+      fusion: 15,
       nivel: 1,
       mult: 1,
       nombre: 'main top ⭐⭐⭐⭐',
@@ -138,7 +138,7 @@ const arts = {
       key: 'Furry',
     },
     Energuia: {
-      update: '',
+      update: 'Energuia2',
       dps: 600,
       fusion: 10,
       nivel: 1,
@@ -147,6 +147,26 @@ const arts = {
       image: 'img/neko.png',
       key: 'Energuia',
     },
+    Energuia2: {
+        update: '',
+        dps: 6500,
+        fusion: 10,
+        nivel: 1,
+        mult: 1,
+        nombre: 'la gente me juzga por beber bebidas energeticas sabe? cuando yo me aparto de las modas y no me drogo o fumo, solo me follo a niñas de 12 años ⭐⭐⭐⭐⭐⭐⭐⭐⭐',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgrJpkQhMZLoPMbOq0J3DALrQwSHcSra8h0rbdGzVrla42j1Ser1k5vrfxSy_NJoRJQ-4&usqp=CAU',
+        key: 'Energuia2',
+      },
+      yummi2: {
+        update: '',
+        dps: 1000,
+        fusion: 10,
+        nivel: 1,
+        mult: 1,
+        nombre: 'bro?',
+        image: 'https://lolhentaiporn.com/wp-content/uploads/2020/02/3262278-League_of_Legends-Yuumi-animated-camotli.gif',
+        key: 'yummi2',
+      },
     discord: {
       update: 'discord_senior',
       dps: 150,
@@ -246,6 +266,60 @@ const arts = {
           'https://i.pinimg.com/474x/9c/01/84/9c0184a25fd73c0a31f984a821a8cba4--the-circus-circus-theme.jpg',
         key: 'setas',
       },
-
+      mk: {
+        update: '',
+        dps: 700,
+        nivel: 1,
+        fusion: 10,
+        mult: 1,
+        nombre: 'Megamaricón ⭐⭐⭐⭐⭐',
+        image:
+          'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fvignette.wikia.nocookie.net%2Fclashroyale%2Fimages%2F0%2F0b%2FMegaKnightCard.png%2Frevision%2Flatest%3Fcb%3D20170613040618&f=1&nofb=1',
+        key: 'mk',
+      },
+      risa: {
+        update: '',
+        dps: 200,
+        nivel: 1,
+        fusion: 10,
+        mult: 1,
+        nombre: 'jijijija ⭐⭐⭐⭐',
+        image:
+          'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fclipartmag.com%2Fimages%2Flaughing-smiley-gif-clipart-47.gif&f=1&nofb=1',
+        key: 'mk',
+      },
+      eb: {
+        update: 'eb2',
+        dps: 500,
+        nivel: 1,
+        fusion: 10,
+        mult: 1,
+        nombre: 'Barbies de elite ⭐⭐⭐⭐⭐',
+        image:
+          'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fvignette.wikia.nocookie.net%2Fclashroyale%2Fimages%2Fe%2Fe8%2FEliteBarbariansCard.png%2Frevision%2Flatest%3Fcb%3D20171212204714&f=1&nofb=1',
+        key: 'eb',
+      },
+      eb2: {
+        update: '',
+        dps: 5500,
+        nivel: 1,
+        fusion: 10,
+        mult: 1,
+        nombre: 'Barbies de elite al 14 ⭐⭐⭐⭐⭐⭐⭐',
+        image:
+          'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fvignette.wikia.nocookie.net%2Fclashroyale%2Fimages%2Fe%2Fe8%2FEliteBarbariansCard.png%2Frevision%2Flatest%3Fcb%3D20171212204714&f=1&nofb=1',
+        key: 'eb2',
+      },
+      larry: {
+        update: '',
+        dps: 1,
+        nivel: 1,
+        fusion: 100,
+        mult: 1,
+        nombre: 'larry ⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐',
+        image:
+          'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fvignette.wikia.nocookie.net%2Fclashroyale%2Fimages%2Fe%2Fe8%2FEliteBarbariansCard.png%2Frevision%2Flatest%3Fcb%3D20171212204714&f=1&nofb=1',
+        key: 'larry',
+      },
   }
   

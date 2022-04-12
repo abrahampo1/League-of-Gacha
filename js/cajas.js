@@ -7,6 +7,7 @@ const cajas = {
         { articulo: arts['Scroom'], prob: 90 },
         { articulo: arts['Furias'], prob: 10 },
         { articulo: arts['Sus'], prob: 40 },
+        { articulo: arts['MetaScroom'], prob: 5 },
       ],
       image:
         'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fbasicos.empack.mx%2Fwp-content%2Fuploads%2F2019%2F10%2FCAJA-RM-35-CON-JUEGO-DE-DIVISIONES.png&f=1&nofb=1',
@@ -52,6 +53,19 @@ const cajas = {
       image:
         'https://image.shutterstock.com/image-illustration/furry-blue-cube-260nw-142005637.jpg',
     },
+    hihihiha: {
+        nombre: 'Caja de oro',
+        xp: 8000,
+        costo: 150000,
+        items: [
+          { articulo: arts['risa'], prob: 20 },
+          { articulo: arts['mk'], prob: 5 },
+          { articulo: arts['eb'], prob: 5 },
+          { articulo: arts['larry'], prob: 1 },
+        ],
+        image:
+          'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F1.bp.blogspot.com%2F-4T_y9HVhK0g%2FWmp_9ImzGQI%2FAAAAAAAABp4%2Fr_3afLJ3nqMxz06ZoFV_P2xPZLfwpyEMgCLcBGAs%2Fs1600%2Fcofre%252Bde%252Boro.png&f=1&nofb=1',
+      },
     void: {
       nombre: 'l̵͚͓̰̜̪̬̥̝̜͂̽͗̒̆͐̆̈́́͊͗̈͘͝a̵̢̛̰̟̭̲̝̪̖̼͔̭͙̫̪͆̆͗́͋̇͘͜ ̴̜̣͖̭͈͍̟̻̜̿͜ͅc̴̗͖̱͚͉̦͔̞̙͌̉̀́͐̌̓̀͂̀a̸̡̹͈̳͙͔̟͙̝̤̰̒̓̎͊͜j̵̧̛̯̥͍͓̮͉̟̙͋͊͑̀͐͗͒͆̆͂̕a̴͙̳̪̹̺͖̽̈̿̀̃͂̀̋̾͊͋̈̉͑',
       xp: 9999999,
@@ -63,4 +77,5 @@ const cajas = {
       image:
         'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.redd.it%2Fm0eo6798a4f41.jpg&f=1&nofb=1',
     },
+    
   }
