@@ -145,7 +145,7 @@ function print_ej(params) {
     }
     let boton_fusion = ""
 
-    if (value['nivel'] >= arts[key]['fusion']) {
+    if (value['nivel'] >= arts[key]['fusion'] && arts[key]['update'] != '') {
       boton_fusion = `<button class="point-btn sml" onclick="fusionar('${key}')">Fusionar ${arts[key]['fusion']}</button>`
     }
     if (value['nivel'] > 0) {
