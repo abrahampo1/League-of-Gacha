@@ -69,6 +69,15 @@ const arts = {
     image:
       'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fterrados.es%2Fwp-content%2Fuploads%2F2013%2F12%2Fboletus_edulis.png&f=1&nofb=1',
   },
+  Sus: {
+    dps: 2,
+    mult: 1,
+    nivel: 1,
+    nombre: 'Cosa sospechosa ⭐',
+    key: 'Sus',
+    image:
+      'https://acegif.com/wp-content/uploads/2020/11/am0ngsusxh-36.gif',
+  },
   Furias: {
     costo: 1000,
     dps: 20,
@@ -80,7 +89,6 @@ const arts = {
     key: 'Furias',
   },
   Darius: {
-    costo: 10000,
     dps: 100,
     nivel: 1,
     mult: 1,
@@ -88,6 +96,24 @@ const arts = {
     image:
       'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.models-resource.com%2Fresources%2Fbig_icons%2F7%2F6694.png&f=1&nofb=1',
     key: 'Darius',
+  },
+  Darius2: {
+    dps: 500,
+    nivel: 1,
+    mult: 1,
+    nombre: 'abuela darius en top con fantasmal e ignite (tu que miedo) ⭐⭐⭐⭐⭐⭐',
+    image:
+      'https://c.tenor.com/JlqocrEEmlMAAAAd/darius-league-of-legends.gif',
+    key: 'Darius2',
+  },
+  Payaso: {
+    dps: 200,
+    nivel: 1,
+    mult: 1,
+    nombre: 'copia exacta de ti mismo ⭐⭐⭐',
+    image:
+      'https://dbdzm869oupei.cloudfront.net/img/sticker/preview/495.png',
+    key: 'Payaso',
   },
 }
 
@@ -98,6 +124,7 @@ const cajas = {
     items: [
       { articulo: arts['Scroom'], prob: 90 },
       { articulo: arts['Furias'], prob: 10 },
+      { articulo: arts['Sus'], prob: 40 },
     ],
     image:
       'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fbasicos.empack.mx%2Fwp-content%2Fuploads%2F2019%2F10%2FCAJA-RM-35-CON-JUEGO-DE-DIVISIONES.png&f=1&nofb=1',
@@ -106,12 +133,23 @@ const cajas = {
     nombre: 'Cofre Hextech',
     costo: 3000,
     items: [
-      { articulo: arts['Scroom'], prob: 10 },
+      { articulo: arts['Sus'], prob: 10 },
       { articulo: arts['Furias'], prob: 70 },
       { articulo: arts['Darius'], prob: 20 },
+      { articulo: arts['Darius2'], prob: 5 },
     ],
     image:
       'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.masarmadura.com%2Fwp-content%2Fuploads%2F2020%2F12%2Fcajitalol-01.png&f=1&nofb=1',
+  },
+  payaso: {
+    nombre: 'Caja payaso',
+    costo: 50000,
+    items: [
+      { articulo: arts['Sus'], prob: 20 },
+      { articulo: arts['Payaso'], prob: 70 },
+    ],
+    image:
+      'http://assets.stickpng.com/images/5c38c7ff4d5036028cf54110.png',
   },
 }
 if (localStorage.getItem('compras')) {
@@ -148,7 +186,7 @@ function print_ej(params) {
     $('#ejercito').append(`
 
           <div class="personaje">
-          <h1> ${value['nombre']} </h1>
+          <h1> ${value['nombre']} (SPS: ${lvl * value['dps']}) </h1>
           <div class="ej">
           ${images}
           </div>
@@ -173,7 +211,7 @@ function print_box(params) {
               alt=""
             />
           </div>
-          ${value['nombre']}
+          ${value['nombre']} 
           
           </div>
           <div class="shop-icon">

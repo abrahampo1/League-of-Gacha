@@ -81,6 +81,8 @@ img{
 
 .ej img{
     height: 100px;
+    margin: 5px;
+    border-radius: 10px;
 }
 
 .ej{
