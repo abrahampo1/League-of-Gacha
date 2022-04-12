@@ -1,12 +1,16 @@
-var bar = new ProgressBar.Line('#container', {
-  strokeWidth: 4,
-  easing: 'easeInOut',
-  duration: 400,
-  color: '#FFEA82',
-  trailColor: '#eee',
-  trailWidth: 1,
-  svgStyle: { width: '100%', height: '100%' },
-})
+try {
+  var bar = new ProgressBar.Line('#container', {
+    strokeWidth: 4,
+    easing: 'easeInOut',
+    duration: 400,
+    color: '#FFEA82',
+    trailColor: '#eee',
+    trailWidth: 1,
+    svgStyle: { width: '100%', height: '100%' },
+  })
+} catch (error) {
+  
+}
 
 var mult = 1
 
@@ -89,12 +93,12 @@ function comprar(item) {
       compras[comprado['key']]['nivel'] = compras[comprado['key']]['nivel'] + 1
     } else {
       compras[comprado['key']] = comprado
+      const jsConfetti = new JSConfetti()
+      jsConfetti.addConfetti()
     }
 
     set_int('xp', get_int('xp') + cajas[item]['xp'])
     calc_level()
-    const jsConfetti = new JSConfetti()
-    jsConfetti.addConfetti()
     localStorage.setItem('compras', JSON.stringify(compras))
     print_box()
     print_ej()
@@ -132,7 +136,7 @@ setInterval(() => {
   set_int('xp', get_int('xp') + dps / 100)
   calc_level()
 }, 1000)
-function print_ej(params) {
+function print_ej(show) {
   $('#ejercito').html('')
   Object.entries(compras).forEach(([key, value]) => {
     let coste = value['costo']
@@ -140,7 +144,7 @@ function print_ej(params) {
     let images = ''
     if (value['image']) {
       for (let index = 0; index < lvl; index++) {
-        images += '<img src="' + value['image'] + '">'
+        images += '<img height="100px" src="' + value['image'] + '">'
       }
     }
     let boton_fusion = ''
@@ -148,7 +152,7 @@ function print_ej(params) {
     if (value['nivel'] >= arts[key]['fusion'] && arts[key]['update'] != '') {
       boton_fusion = `<button class="point-btn sml" onclick="fusionar('${key}')">Fusionar ${arts[key]['fusion']}</button>`
     }
-    if (value['nivel'] > 0) {
+    if (value['nivel'] > 0 && show) {
       $('#ejercito').append(`
 
       <div class="personaje">
@@ -160,6 +164,12 @@ function print_ej(params) {
       </div>
         
       </div>
+
+`)
+    }else if(value['nivel'] > 0){
+      $('#ejercito').append(`
+
+      ${images}
 
 `)
     }
@@ -217,7 +227,7 @@ function calc_level() {
 calc_level()
 
 print_box()
-print_ej()
+
 
 function evento(params) {
   var item = eventos[Math.floor(Math.random() * eventos.length)]
