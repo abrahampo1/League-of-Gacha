@@ -1,3 +1,13 @@
+var bar = new ProgressBar.Line('#container',{
+  strokeWidth: 4,
+  easing: 'easeInOut',
+  duration: 400,
+  color: '#FFEA82',
+  trailColor: '#eee',
+  trailWidth: 1,
+  svgStyle: {width: '100%', height: '100%'}});
+
+
 function get_int(name, def = 0) {
   if (localStorage.getItem(name)) {
     if (localStorage.getItem(name) == 'NaN') {
@@ -24,7 +34,9 @@ function getRandomArbitrary(min, max) {
 var points = parseInt(get_int('points'))
 
 $('.point-btn').on('click', function (params) {
-  set_int('points', get_int('points') + 1, '.money-holder')
+  set_int('points', get_int('points') + get_int('level', 1), '.money-holder')
+  set_int('xp', get_int('xp') + get_int('level', 1), '')
+  calc_level()
 })
 
 function fusionar(item) {
@@ -75,6 +87,9 @@ function comprar(item) {
     } else {
       compras[comprado['key']] = comprado
     }
+
+    set_int('xp', get_int('xp') + cajas[item]['xp'])
+    calc_level()
     const jsConfetti = new JSConfetti()
     jsConfetti.addConfetti()
     localStorage.setItem('compras', JSON.stringify(compras))
@@ -182,7 +197,7 @@ const arts = {
   },
   Yummi: {
     update: '',
-    dps: 400,
+    dps: 100,
     fusion: 10,
     nivel: 1,
     mult: 1,
@@ -213,7 +228,7 @@ const arts = {
   },
   Furry: {
     update: '',
-    dps: 1000,
+    dps: 300,
     nivel: 1,
     fusion: 10,
     mult: 1,
@@ -223,7 +238,7 @@ const arts = {
   },
   Energuia: {
     update: '',
-    dps: 1500,
+    dps: 600,
     fusion: 10,
     nivel: 1,
     mult: 1,
@@ -259,6 +274,7 @@ const cajas = {
   noob: {
     nombre: 'Cajita de carton',
     costo: 100,
+    xp: 10,
     items: [
       { articulo: arts['Scroom'], prob: 90 },
       { articulo: arts['Furias'], prob: 10 },
@@ -269,6 +285,7 @@ const cajas = {
   },
   hextech: {
     nombre: 'Cofre Hextech',
+    xp: 100,
     costo: 3000,
     items: [
       { articulo: arts['Sus'], prob: 10 },
@@ -281,6 +298,7 @@ const cajas = {
   },
   payaso: {
     nombre: 'Caja payaso',
+    xp: 1000,
     costo: 30000,
     items: [
       { articulo: arts['Sus'], prob: 20 },
@@ -294,6 +312,7 @@ const cajas = {
   },
   furros: {
     nombre: 'Furro-caja',
+    xp: 4000,
     costo: 70000,
     items: [
       { articulo: arts['Teemo'], prob: 20 },
@@ -323,6 +342,7 @@ setInterval(() => {
     )
   })
   $('.dps-holder').html('SPS: ' + dps)
+  $('.lvl-holder').html('NIVEL: ' + get_int('level'))
 }, 100)
 
 function print_ej(params) {
@@ -339,7 +359,7 @@ function print_ej(params) {
     let boton_fusion = ""
 
     if (value['nivel'] >= value['fusion']) {
-      boton_fusion = `<button class="point-btn" onclick="fusionar('${key}')">Fusionar ${value['fusion']}</button>`
+      boton_fusion = `<button class="point-btn sml" onclick="fusionar('${key}')">Fusionar ${value['fusion']}</button>`
     }
     if (value['nivel'] > 0) {
       $('#ejercito').append(`
@@ -347,7 +367,8 @@ function print_ej(params) {
       <div class="personaje">
       <h1> ${value['nombre']} (SPS: ${lvl * value['dps']}) </h1> 
       ${boton_fusion}
-      <div class="ej">
+      <button class="point-btn sml" onclick="toggle('#${key}_ejercito')">Alternar Ejercito</button>
+      <div class="ej" id="${key}_ejercito">
       ${images}
       </div>
         
@@ -384,5 +405,34 @@ function print_box(params) {
   })
 }
 
+
+function toggle(params) {
+  $(params).toggle()
+}
+
+
+function calc_level() {
+  let level = get_int('level', 1);
+  let xp = level * 100
+  let xp_earned = get_int('xp', 0);
+  if(xp_earned >= xp){
+    set_int('level', level + 1, '')
+    set_int('xp', get_int('xp') - xp, '')
+    xp_earned = 0;
+    xp = (level + 1) * 100
+    const jsConfetti = new JSConfetti()
+    jsConfetti.addConfetti()
+    calc_level()
+    return
+}
+
+  bar.animate(xp_earned/xp);  // Value from 0.0 to 1.0
+
+}
+
+calc_level()
+
+
 print_box()
 print_ej()
+

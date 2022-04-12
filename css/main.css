@@ -79,8 +79,14 @@ body{
     border: none;
     border-radius: 10px;
     padding: 10px;
+    margin: 5px;
     color: whitesmoke;
     cursor: pointer;
+}
+
+
+.point-btn.sml{
+    font-size: 15px;
 }
 
 .ej img{
