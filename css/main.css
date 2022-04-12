@@ -37,13 +37,14 @@ body{
     margin-right: 10px;
 }
 
-img{
+.shop-btn img{
     height: 100%;
 }
 
 .shop-btn{
     text-align: center;
     max-width: 200px;
+    min-width: 100px;
     padding: 10px;
     border-radius: 20px;
     background: #1F63B3;
@@ -91,6 +92,7 @@ img{
 .ej{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .personaje h1{

@@ -1,6 +1,6 @@
 function get_int(name, def = 0) {
   if (localStorage.getItem(name)) {
-    if(localStorage.getItem(name) == 'NaN'){
+    if (localStorage.getItem(name) == 'NaN') {
       set_int(name, def)
     }
     return parseFloat(localStorage.getItem(name))
@@ -123,7 +123,7 @@ const arts = {
     nivel: 1,
     nombre: 'SUS ⭐⭐',
     key: 'Sus2',
-    image: 'https://acegif.com/wp-content/uploads/2020/11/am0ngsusxh-36.gif',
+    image: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia1.tenor.com%2Fimages%2Fa736455eede608798c4215193087ad73%2Ftenor.gif%3Fitemid%3D18888018&f=1&nofb=1',
   },
   Furias: {
     costo: 1000,
@@ -326,15 +326,17 @@ function print_ej(params) {
         images += '<img src="' + value['image'] + '">'
       }
     }
+    let boton_fusion = ""
+
+    if (value['nivel'] >= value['fusion']) {
+      boton_fusion = `<button class="point-btn" onclick="fusionar('${key}')">Fusionar ${value['fusion']}</button>`
+    }
     if (value['nivel'] > 0) {
       $('#ejercito').append(`
 
       <div class="personaje">
-      <h1> ${value['nombre']} (SPS: ${
-        lvl * value['dps']
-      }) </h1> <button class="point-btn" onclick="fusionar('${key}')">Fusionar ${
-        value['fusion']
-      }</button>
+      <h1> ${value['nombre']} (SPS: ${lvl * value['dps']}) </h1> 
+      ${boton_fusion}
       <div class="ej">
       ${images}
       </div>
