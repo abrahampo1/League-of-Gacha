@@ -286,7 +286,7 @@ const arts = {
         nombre: 'jijijija ⭐⭐⭐⭐',
         image:
           'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fclipartmag.com%2Fimages%2Flaughing-smiley-gif-clipart-47.gif&f=1&nofb=1',
-        key: 'mk',
+        key: 'risa',
       },
       eb: {
         update: 'eb2',
