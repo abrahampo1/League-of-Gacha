@@ -233,6 +233,7 @@ function evento(params) {
     title: item['titulo'],
     text: item['cuerpo'],
     icon: item['imagen'],
+    closeOnClickOutside: false
   })
   setTimeout(() => {
     evento()
