@@ -67,7 +67,7 @@ function fusionar(item) {
   }
 }
 
-function comprar(item) {
+function comprar(item, modal = true) {
   let coste = cajas[item]['costo']
   if (coste <= get_int('points')) {
     set_int('points', get_int('points') - coste, '.money-holder')
@@ -85,10 +85,15 @@ function comprar(item) {
         comprado = element['articulo']
       }
     })
-    swal({
-      text: 'Te ha tocado: ' + comprado['nombre'],
-      icon: comprado['image'],
-    })
+    if(modal){
+      swal({
+        text: 'Te ha tocado: ' + comprado['nombre'],
+        icon: comprado['image'],
+      })
+    }else{
+      $.notify("Has obtenido: " + comprado['nombre'], "success");
+    }
+    
     if (compras[comprado['key']]) {
       compras[comprado['key']]['nivel'] = compras[comprado['key']]['nivel'] + 1
     } else {
@@ -180,7 +185,8 @@ function print_box(params) {
   $('#shop').html('')
   Object.entries(cajas).forEach(([key, value]) => {
     $('#shop').append(`
-    <div class="shop-btn" onclick="comprar('${key}')">
+    <div class="shop-btn">
+    
           <div class="shop-data">
           
           <div class="costo">
@@ -196,6 +202,8 @@ function print_box(params) {
           <div class="shop-icon">
             <img src="${value['image']}">
           </div>
+          <div class="shop-btn" onclick="comprar('${key}')">Comprar 1</div>
+          <div class="shop-btn" onclick="compras_masa('${key}', 10)">Comprar 10</div>
         </div>
     
     `)
@@ -249,3 +257,9 @@ function evento(params) {
 setTimeout(() => {
   evento()
 }, getRandomArbitrary(10000, 300000))
+
+function compras_masa(caja, veces) {
+  for (let index = 0; index < veces; index++) {
+    comprar(caja, false)
+  }
+}
