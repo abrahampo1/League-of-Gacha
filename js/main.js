@@ -1,14 +1,14 @@
-var bar = new ProgressBar.Line('#container',{
+var bar = new ProgressBar.Line('#container', {
   strokeWidth: 4,
   easing: 'easeInOut',
   duration: 400,
   color: '#FFEA82',
   trailColor: '#eee',
   trailWidth: 1,
-  svgStyle: {width: '100%', height: '100%'}});
+  svgStyle: { width: '100%', height: '100%' },
+})
 
-
-var mult = 1;
+var mult = 1
 
 function get_int(name, def = 0) {
   if (localStorage.getItem(name)) {
@@ -53,9 +53,10 @@ function fusionar(item) {
       compras[comprado['key']]['nivel'] = compras[comprado['key']]['nivel'] + 1
     } else {
       compras[comprado['key']] = comprado
+      const jsConfetti = new JSConfetti()
+      jsConfetti.addConfetti()
     }
-    const jsConfetti = new JSConfetti()
-    jsConfetti.addConfetti()
+
     localStorage.setItem('compras', JSON.stringify(compras))
     print_box()
     print_ej()
@@ -100,7 +101,6 @@ function comprar(item) {
   }
 }
 
-
 if (localStorage.getItem('compras')) {
   var compras = localStorage.getItem('compras')
   compras = JSON.parse(compras)
@@ -114,12 +114,13 @@ setInterval(() => {
     dps += value['dps'] * value['nivel']
     set_int(
       'points',
-      get_int('points') + ((value['dps'] * value['nivel']) / 10) * get_int('mult', 1),
+      get_int('points') +
+        ((value['dps'] * value['nivel']) / 10) * get_int('mult', 1),
       '.money-holder',
     )
   })
-  $('.dps-holder').html('SPS: ' + dps* get_int('mult', 1))
-  
+  $('.dps-holder').html('SPS: ' + dps * get_int('mult', 1))
+
   $('.lvl-holder').html('NIVEL: ' + get_int('level'))
 }, 100)
 
@@ -128,10 +129,9 @@ setInterval(() => {
   Object.entries(compras).forEach(([key, value]) => {
     dps += value['dps'] * value['nivel']
   })
-  set_int('xp', get_int('xp') + (dps/100))
+  set_int('xp', get_int('xp') + dps / 100)
   calc_level()
-  
-}, 1000);
+}, 1000)
 function print_ej(params) {
   $('#ejercito').html('')
   Object.entries(compras).forEach(([key, value]) => {
@@ -143,7 +143,7 @@ function print_ej(params) {
         images += '<img src="' + value['image'] + '">'
       }
     }
-    let boton_fusion = ""
+    let boton_fusion = ''
 
     if (value['nivel'] >= arts[key]['fusion'] && arts[key]['update'] != '') {
       boton_fusion = `<button class="point-btn sml" onclick="fusionar('${key}')">Fusionar ${arts[key]['fusion']}</button>`
@@ -192,41 +192,35 @@ function print_box(params) {
   })
 }
 
-
 function toggle(params) {
   $(params).toggle()
 }
 
-
 function calc_level() {
-  let level = get_int('level', 1);
+  let level = get_int('level', 1)
   let xp = level * 100
-  let xp_earned = get_int('xp', 0);
-  if(xp_earned >= xp){
+  let xp_earned = get_int('xp', 0)
+  if (xp_earned >= xp) {
     set_int('level', level + 1, '')
     set_int('xp', get_int('xp') - xp, '')
-    xp_earned = 0;
+    xp_earned = 0
     xp = (level + 1) * 100
     const jsConfetti = new JSConfetti()
     jsConfetti.addConfetti()
     calc_level()
     return
-}
+  }
 
-  bar.animate(xp_earned/xp);  // Value from 0.0 to 1.0
-
+  bar.animate(xp_earned / xp) // Value from 0.0 to 1.0
 }
 
 calc_level()
 
-
 print_box()
 print_ej()
 
-
-
 function evento(params) {
-  var item = eventos[Math.floor(Math.random()*eventos.length)];
+  var item = eventos[Math.floor(Math.random() * eventos.length)]
   console.log(item)
   set_int('mult', 1)
   set_int('mult', get_int('mult', 1) * item['mult'])
@@ -234,15 +228,14 @@ function evento(params) {
     title: item['titulo'],
     text: item['cuerpo'],
     icon: item['imagen'],
-    closeOnClickOutside: false
+    closeOnClickOutside: false,
   })
   setTimeout(() => {
     evento()
-  }, item['delay'] + getRandomArbitrary(10000, 300000));
+  }, item['delay'] + getRandomArbitrary(10000, 300000))
   return
 }
 
-
 setTimeout(() => {
   evento()
-}, getRandomArbitrary(10000, 300000));
+}, getRandomArbitrary(10000, 300000))
