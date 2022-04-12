@@ -118,7 +118,7 @@ setInterval(() => {
       '.money-holder',
     )
   })
-  $('.dps-holder').html('SPS: ' + dps)
+  $('.dps-holder').html('SPS: ' + dps* get_int('mult', 1))
   
   $('.lvl-holder').html('NIVEL: ' + get_int('level'))
 }, 100)
