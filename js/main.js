@@ -141,7 +141,7 @@ const arts = {
     dps: 100,
     update: 'Darius2',
     nivel: 1,
-    fusion: 10,
+    fusion: 5,
     mult: 1,
     nombre: 'abuela darius en top ⭐⭐⭐⭐',
     image:
@@ -192,7 +192,7 @@ const arts = {
     key: 'Yummi',
   },
   Chad: {
-    update: '',
+    update: 'GigaChad',
     dps: 600,
     fusion: 10,
     nivel: 1,
@@ -200,6 +200,16 @@ const arts = {
     nombre: 'representacion de ti en tus pensamientos ⭐⭐⭐⭐⭐',
     image: 'https://i.kym-cdn.com/photos/images/facebook/002/220/732/0b1.png',
     key: 'Chad',
+  },
+  GigaChad: {
+    update: '',
+    dps: 6000,
+    fusion: 10,
+    nivel: 1,
+    mult: 1,
+    nombre: 'representacion de ti en tus pensamientos ⭐⭐⭐⭐⭐',
+    image: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F736x%2F3a%2F1c%2Fd9%2F3a1cd955b2e0f3923192b64154156089.jpg&f=1&nofb=1',
+    key: 'GigaChad',
   },
   Furry: {
     update: '',
