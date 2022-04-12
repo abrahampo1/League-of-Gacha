@@ -136,7 +136,7 @@ setInterval(() => {
   set_int('xp', get_int('xp') + dps / 100)
   calc_level()
 }, 1000)
-function print_ej(show) {
+function print_ej(show = true) {
   $('#ejercito').html('')
   Object.entries(compras).forEach(([key, value]) => {
     let coste = value['costo']
