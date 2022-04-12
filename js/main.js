@@ -227,7 +227,7 @@ const arts = {
     key: 'GigaChad',
   },
   Furry: {
-    update: '',
+    update: 'genshin2',
     dps: 300,
     nivel: 1,
     fusion: 10,
@@ -267,6 +267,39 @@ const arts = {
     image:
       'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pngkit.com%2Fpng%2Ffull%2F393-3930198_dragon-ball-clipart-super-saiyan-goku-ssj-db.png&f=1&nofb=1',
     key: 'goku2',
+  },
+  n: {
+    update: '',
+    dps: -100,
+    nivel: 1,
+    fusion: 10,
+    mult: 1,
+    nombre: 'N̵̪͍͓̞̠͔̿̓̆͗̍̇̍͒͛̀̂̉̈́ͅÍ̵̱͙̊̃̏͐̉͊͋̇̚̚͝͝͝Ǵ̶̰̖̯͖͗͑͑̏̔̾̕̚G̴̨̛̙̘̜̯͓̣̰̘̲͐̃̊̌̃A̵̼͔͔͈̺͋́̓̏̎́̀̆͌̕',
+    image:
+      'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.redd.it%2Fkz29pseqp7d41.jpg&f=1&nofb=1',
+    key: 'n',
+  },
+  nft: {
+    update: '',
+    dps: 999999,
+    nivel: 1,
+    fusion: 10,
+    mult: 1,
+    nombre: 'Captura de pantalla',
+    image:
+      'https://libres.io/wp-content/uploads/2021/12/download-3.png',
+    key: 'nft',
+  },
+  genshin2: {
+    update: '',
+    dps: 1000,
+    nivel: 1,
+    fusion: 10,
+    mult: 1,
+    nombre: 'Diabetes grado 2 ⭐⭐⭐⭐⭐⭐⭐⭐⭐',
+    image:
+      'https://imagenes.elpais.com/resizer/fjYH-qJ1BjwgKHoEVG2z394qNe4=/1960x1470/cloudfront-eu-central-1.images.arcpublishing.com/prisa/N37WKWJULVG4XDD2IP2WZVCECA.jpg',
+    key: 'genshin2',
   },
 }
 
@@ -310,6 +343,7 @@ const cajas = {
     image:
       'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.vippng.com%2Fpng%2Ffull%2F114-1145994_clown-png.png&f=1&nofb=1',
   },
+  
   furros: {
     nombre: 'Furro-caja',
     xp: 4000,
@@ -322,6 +356,17 @@ const cajas = {
     ],
     image:
       'https://image.shutterstock.com/image-illustration/furry-blue-cube-260nw-142005637.jpg',
+  },
+  void: {
+    nombre: 'l̵͚͓̰̜̪̬̥̝̜͂̽͗̒̆͐̆̈́́͊͗̈͘͝a̵̢̛̰̟̭̲̝̪̖̼͔̭͙̫̪͆̆͗́͋̇͘͜ ̴̜̣͖̭͈͍̟̻̜̿͜ͅc̴̗͖̱͚͉̦͔̞̙͌̉̀́͐̌̓̀͂̀a̸̡̹͈̳͙͔̟͙̝̤̰̒̓̎͊͜j̵̧̛̯̥͍͓̮͉̟̙͋͊͑̀͐͗͒͆̆͂̕a̴͙̳̪̹̺͖̽̈̿̀̃͂̀̋̾͊͋̈̉͑',
+    xp: 9999999,
+    costo: 99,
+    items: [
+      { articulo: arts['n'], prob: 20 },
+      { articulo: arts['nft'], prob: 5 },
+    ],
+    image:
+      'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.redd.it%2Fm0eo6798a4f41.jpg&f=1&nofb=1',
   },
 }
 if (localStorage.getItem('compras')) {
