@@ -131,7 +131,7 @@ setInterval(() => {
       '.money-holder',
     )
   })
-  $('.dps-holder').html('DPS: ' + dps)
+  $('.dps-holder').html('SPS: ' + dps)
 }, 100)
 
 function print_ej(params) {
