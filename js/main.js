@@ -153,7 +153,7 @@ const arts = {
     key: 'Furias',
   },
   Darius: {
-    dps: 100,
+    dps: 50,
     update: 'Darius2',
     nivel: 1,
     fusion: 5,
@@ -176,7 +176,7 @@ const arts = {
   },
   Payaso: {
     update: '',
-    dps: 300,
+    dps: 100,
     fusion: 10,
     nivel: 1,
     mult: 1,
@@ -186,7 +186,7 @@ const arts = {
   },
   Teemo: {
     update: '',
-    dps: 250,
+    dps: 90,
     nivel: 1,
     fusion: 10,
     mult: 1,
@@ -197,7 +197,7 @@ const arts = {
   },
   Yummi: {
     update: '',
-    dps: 100,
+    dps: 50,
     fusion: 10,
     nivel: 1,
     mult: 1,
@@ -208,7 +208,7 @@ const arts = {
   },
   Chad: {
     update: 'GigaChad',
-    dps: 600,
+    dps: 200,
     fusion: 10,
     nivel: 1,
     mult: 1,
@@ -218,7 +218,7 @@ const arts = {
   },
   GigaChad: {
     update: '',
-    dps: 6000,
+    dps: 2200,
     fusion: 10,
     nivel: 1,
     mult: 1,
@@ -228,9 +228,9 @@ const arts = {
   },
   Furry: {
     update: 'genshin2',
-    dps: 300,
+    dps: 100,
     nivel: 1,
-    fusion: 10,
+    fusion: 9,
     mult: 1,
     nombre: 'supuesta jugadora de genshin impact ⭐⭐⭐⭐⭐',
     image: 'https://i.redd.it/6g02zowzahx71.jpg',
@@ -248,7 +248,7 @@ const arts = {
   },
   discord: {
     update: '',
-    dps: 500,
+    dps: 150,
     nivel: 1,
     fusion: 10,
     mult: 1,
