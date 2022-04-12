@@ -186,7 +186,7 @@ const arts = {
         mult: 1,
         nombre: 'Moderador de discord senior ⭐⭐⭐⭐⭐⭐',
         image:
-          'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2F4eHoLq_2vOA%2Fmaxresdefault.jpg&f=1&nofb=1',
+          'https://i.kym-cdn.com/entries/icons/facebook/000/035/767/cover4.jpg',
         key: 'discord_senior',
       },
     goku2: {
