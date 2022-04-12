@@ -228,6 +228,7 @@ print_ej()
 function evento(params) {
   var item = eventos[Math.floor(Math.random()*eventos.length)];
   console.log(item)
+  set_int('mult', 1)
   set_int('mult', get_int('mult', 1) * item['mult'])
   swal({
     title: item['titulo'],

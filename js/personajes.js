@@ -318,7 +318,7 @@ const arts = {
         mult: 1,
         nombre: 'larry ⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐',
         image:
-          'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fvignette.wikia.nocookie.net%2Fclashroyale%2Fimages%2Fe%2Fe8%2FEliteBarbariansCard.png%2Frevision%2Flatest%3Fcb%3D20171212204714&f=1&nofb=1',
+          'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fvignette3.wikia.nocookie.net%2Fclashroyale%2Fimages%2Ff%2Ff0%2FSkeletonsCard.png%2Frevision%2Flatest%3Fcb%3D20160702201245&f=1&nofb=1',
         key: 'larry',
       },
   }
