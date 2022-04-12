@@ -115,11 +115,11 @@ if (localStorage.getItem('compras')) {
 setInterval(() => {
   let dps = 0
   Object.entries(compras).forEach(([key, value]) => {
-    dps += value['dps'] * value['nivel']
+    dps += arts[key]['dps'] * value['nivel']
     set_int(
       'points',
       get_int('points') +
-        ((value['dps'] * value['nivel']) / 10) * get_int('mult', 1),
+        ((arts[key]['dps'] * value['nivel']) / 10) * get_int('mult', 1),
       '.money-holder',
     )
   })
@@ -156,7 +156,7 @@ function print_ej(show = true) {
       $('#ejercito').append(`
 
       <div class="personaje">
-      <h1> ${value['nombre']} (SPS: ${lvl * value['dps']}) </h1> 
+      <h1> ${value['nombre']} (SPS: ${lvl * arts[key]['dps']}) </h1> 
       ${boton_fusion}
       <button class="point-btn sml" onclick="toggle('#${key}_ejercito')">Alternar Ejercito</button>
       <div class="ej" id="${key}_ejercito">
