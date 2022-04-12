@@ -196,7 +196,7 @@ const cajas = {
       { articulo: arts['Chad'], prob: 15 },
     ],
     image:
-      'http://assets.stickpng.com/images/5c38c7ff4d5036028cf54110.png',
+      'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.vippng.com%2Fpng%2Ffull%2F114-1145994_clown-png.png&f=1&nofb=1',
   },
   furros: {
     nombre: 'Furro-caja',
