@@ -15,7 +15,7 @@ const arts = {
       mult: 1,
       nivel: 1,
       fusion: 10,
-      update: '',
+      update: 'setas',
       nombre: 'seta metalica ⭐',
       key: 'MetaScroom',
       image:
@@ -234,6 +234,17 @@ const arts = {
         image:
           'https://i.pinimg.com/474x/9c/01/84/9c0184a25fd73c0a31f984a821a8cba4--the-circus-circus-theme.jpg',
         key: 'payaso2',
+      },
+      setas: {
+        update: '',
+        dps: 250,
+        nivel: 1,
+        fusion: 10,
+        mult: 1,
+        nombre: 'Setas de las buenas ⭐⭐⭐',
+        image:
+          'https://i.pinimg.com/474x/9c/01/84/9c0184a25fd73c0a31f984a821a8cba4--the-circus-circus-theme.jpg',
+        key: 'setas',
       },
 
   }
