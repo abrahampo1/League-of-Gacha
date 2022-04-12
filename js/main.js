@@ -185,7 +185,7 @@ const arts = {
     key: 'Payaso',
   },
   Teemo: {
-    update: '',
+    update: 'cancer',
     dps: 90,
     nivel: 1,
     fusion: 10,
@@ -300,6 +300,17 @@ const arts = {
     image:
       'https://imagenes.elpais.com/resizer/fjYH-qJ1BjwgKHoEVG2z394qNe4=/1960x1470/cloudfront-eu-central-1.images.arcpublishing.com/prisa/N37WKWJULVG4XDD2IP2WZVCECA.jpg',
     key: 'genshin2',
+  },
+  cancer: {
+    update: '',
+    dps: 1000,
+    nivel: 1,
+    fusion: 10,
+    mult: 1,
+    nombre: 'Literalmente Cancer ⭐⭐⭐⭐⭐',
+    image:
+      'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fenacademic.com%2Fpictures%2Fenwiki%2F83%2FSymptoms_of_cancer_metastasis.png&f=1&nofb=1',
+    key: 'cancer',
   },
 }
 
