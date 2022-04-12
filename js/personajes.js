@@ -41,6 +41,16 @@ const arts = {
       key: 'Sus2',
       image: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia1.tenor.com%2Fimages%2Fa736455eede608798c4215193087ad73%2Ftenor.gif%3Fitemid%3D18888018&f=1&nofb=1',
     },
+    Sus3: {
+        dps: 300,
+        mult: 1,
+        fusion: 20,
+        update: '',
+        nivel: 1,
+        nombre: 'WHEN THE IMPOSTER IS SUS ⭐⭐⭐',
+        key: 'Sus3',
+        image: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.imgflip.com%2F4w752h.jpg&f=1&nofb=1',
+      },
     Furias: {
       costo: 1000,
       dps: 20,
@@ -278,7 +288,7 @@ const arts = {
         key: 'mk',
       },
       risa: {
-        update: '',
+        update: 'jijijijant',
         dps: 200,
         nivel: 1,
         fusion: 10,
@@ -311,15 +321,37 @@ const arts = {
         key: 'eb2',
       },
       larry: {
-        update: '',
+        update: 'elarry',
         dps: 1,
         nivel: 1,
-        fusion: 100,
+        fusion: 6,
         mult: 1,
         nombre: 'larry ⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐',
         image:
           'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fvignette3.wikia.nocookie.net%2Fclashroyale%2Fimages%2Ff%2Ff0%2FSkeletonsCard.png%2Frevision%2Flatest%3Fcb%3D20160702201245&f=1&nofb=1',
         key: 'larry',
+      },
+      elarry: {
+        update: '',
+        dps: -6,
+        nivel: 1,
+        fusion: 100,
+        mult: 1,
+        nombre: 'ejercito de larrys ⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐',
+        image:
+          'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fvignette.wikia.nocookie.net%2Fclash-royale-esp%2Fimages%2F8%2F82%2FEj%25C3%25A9rcito_de_esqueletos.png%2Frevision%2Flatest%3Fcb%3D20170517150503%26path-prefix%3Des&f=1&nofb=1',
+        key: 'elarry',
+      },
+      jijijijant: {
+        update: '',
+        dps: 2000,
+        nivel: 1,
+        fusion: 100,
+        mult: 1,
+        nombre: 'a veces la vida no es jijijija :(',
+        image:
+          'https://c.tenor.com/WIFUFWF2bicAAAAd/reverse-troll-smile.gif',
+        key: 'jijijijant',
       },
   }
   
