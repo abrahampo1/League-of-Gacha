@@ -43,11 +43,11 @@ function comprar(item) {
       }
     })
     swal({
-      text: 'Te ha tocado: ' + comprado['nombre'],
+      text: 'Te ha tocado: una ' + comprado['nombre'],
       icon: comprado['image'],
     })
     if (compras[comprado['key']]) {
-      compras[comprado['key']]['nivel'] = compras[comprado['key']]['nivel'] + 1;
+      compras[comprado['key']]['nivel'] = compras[comprado['key']]['nivel'] + 1
     } else {
       compras[comprado['key']] = comprado
     }
@@ -55,6 +55,7 @@ function comprar(item) {
     jsConfetti.addConfetti()
     localStorage.setItem('compras', JSON.stringify(compras))
     print_box()
+    print_ej()
   }
 }
 const arts = {
@@ -63,7 +64,7 @@ const arts = {
     dps: 1,
     mult: 1,
     nivel: 1,
-    nombre: 'una seta ⭐',
+    nombre: 'seta ⭐',
     key: 'Scroom',
     image:
       'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fterrados.es%2Fwp-content%2Fuploads%2F2013%2F12%2Fboletus_edulis.png&f=1&nofb=1',
@@ -75,7 +76,7 @@ const arts = {
     nivel: 1,
     image:
       'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fvignette.wikia.nocookie.net%2Frogue-lineage%2Fimages%2Fe%2Fed%2FHaselden.png%2Frevision%2Flatest%3Fcb%3D20191107065431&f=1&nofb=1',
-    nombre: 'una chupada a furias ⭐⭐',
+    nombre: 'chupada a furias ⭐⭐',
     key: 'Furias',
   },
   Darius: {
@@ -83,7 +84,7 @@ const arts = {
     dps: 100,
     nivel: 1,
     mult: 1,
-    nombre: 'una abuela darius en top ⭐⭐⭐⭐',
+    nombre: 'abuela darius en top ⭐⭐⭐⭐',
     image:
       'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.models-resource.com%2Fresources%2Fbig_icons%2F7%2F6694.png&f=1&nofb=1',
     key: 'Darius',
@@ -133,39 +134,26 @@ setInterval(() => {
   $('.dps-holder').html('DPS: ' + dps)
 }, 100)
 
-function print_shop(params) {
-  $('#shop').html('')
-  Object.entries(arts).forEach(([key, value]) => {
+function print_ej(params) {
+  $('#ejercito').html('')
+  Object.entries(compras).forEach(([key, value]) => {
     let coste = value['costo']
     let lvl = value['nivel']
     let images = ''
-    if (compras[key]) {
-      coste = coste * compras[key]['nivel']
-      lvl = compras[key]['nivel']
-    }
     if (value['image']) {
-      for (let index = 1; index < lvl; index++) {
+      for (let index = 0; index < lvl; index++) {
         images += '<img src="' + value['image'] + '">'
       }
     }
-    $('#shop').append(`
-    <div class="shop-btn" onclick="comprar('${key}')">
-          <div class="shop-data">
-          
-          <div class="costo">
-            ${coste}
-            <img
-              src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fvignette.wikia.nocookie.net%2Frogue-lineage%2Fimages%2F7%2F7d%2FSilver_Screenshot-0.png%2Frevision%2Flatest%3Fcb%3D20190613225622&f=1&nofb=1"
-              alt=""
-            />
-          </div>
-          Comprar ${value['nombre']}
-          
-          </div>
-          <div class="shop-images">
+    $('#ejercito').append(`
+
+          <div class="personaje">
+          <h1> ${value['nombre']} </h1>
+          <div class="ej">
           ${images}
           </div>
-        </div>
+            
+          </div>
     
     `)
   })
@@ -198,3 +186,4 @@ function print_box(params) {
 }
 
 print_box()
+print_ej()

@@ -2,12 +2,20 @@
     font-family: 'Poppins', sans-serif;
 }
 
+body{
+    text-align: center;
+}
+
 .money {
     height: 35px;
     justify-content: center;
     display: flex;
     align-items: center;
     
+}
+
+#shop{
+    display: flex;
 }
 
 .money h1 {
@@ -55,4 +63,26 @@ img{
 
 .shop-icon{
     height: 100px;
+}
+
+.point-btn{
+    font-size: 30px;
+    text-align: center;
+    background: #1F63B3;
+    background: -webkit-linear-gradient(top left, #1F63B3, #B48CDD);
+    background: -moz-linear-gradient(top left, #1F63B3, #B48CDD);
+    background: linear-gradient(to bottom right, #1F63B3, #B48CDD);
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+.ej img{
+    height: 100px;
+}
+
+.personaje h1{
+    font-size: 20px;
 }
