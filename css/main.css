@@ -83,6 +83,12 @@ img{
     height: 100px;
 }
 
+.ej{
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .personaje h1{
     font-size: 20px;
+    text-align: left;
 }
