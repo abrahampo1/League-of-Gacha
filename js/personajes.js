@@ -277,7 +277,7 @@ const arts = {
         key: 'setas',
       },
       mk: {
-        update: '',
+        update: 'pekka',
         dps: 700,
         nivel: 1,
         fusion: 10,
@@ -302,7 +302,7 @@ const arts = {
         update: 'eb2',
         dps: 500,
         nivel: 1,
-        fusion: 10,
+        fusion: 5,
         mult: 1,
         nombre: 'Barbies de elite ⭐⭐⭐⭐⭐',
         image:
@@ -344,7 +344,7 @@ const arts = {
       },
       jijijijant: {
         update: '',
-        dps: 2000,
+        dps: 2300,
         nivel: 1,
         fusion: 100,
         mult: 1,
@@ -352,6 +352,17 @@ const arts = {
         image:
           'https://c.tenor.com/WIFUFWF2bicAAAAd/reverse-troll-smile.gif',
         key: 'jijijijant',
+      },
+      pekka: {
+        update: '',
+        dps: 7500,
+        nivel: 1,
+        fusion: 100,
+        mult: 1,
+        nombre:'Mami panqueques ⭐⭐⭐⭐⭐⭐⭐',
+        image:
+          'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fvignette.wikia.nocookie.net%2Fclash-royale-esp%2Fimages%2Fc%2Fc8%2FPEKKA_level_5.png%2Frevision%2Flatest%3Fcb%3D20160605074710%26path-prefix%3Des&f=1&nofb=1',
+        key: 'pekka',
       },
   }
   
