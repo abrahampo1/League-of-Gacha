@@ -222,7 +222,7 @@ const arts = {
     fusion: 10,
     nivel: 1,
     mult: 1,
-    nombre: 'representacion de ti en tus pensamientos ⭐⭐⭐⭐⭐',
+    nombre: 'ojala fueras tu así ⭐⭐⭐⭐⭐⭐',
     image: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F736x%2F3a%2F1c%2Fd9%2F3a1cd955b2e0f3923192b64154156089.jpg&f=1&nofb=1',
     key: 'GigaChad',
   },
