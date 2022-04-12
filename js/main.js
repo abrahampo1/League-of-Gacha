@@ -107,7 +107,7 @@ const arts = {
     key: 'Darius2',
   },
   Payaso: {
-    dps: 200,
+    dps: 300,
     nivel: 1,
     mult: 1,
     nombre: 'copia exacta de ti mismo ⭐⭐⭐',
@@ -115,6 +115,51 @@ const arts = {
       'https://dbdzm869oupei.cloudfront.net/img/sticker/preview/495.png',
     key: 'Payaso',
   },
+  Teemo: {
+    dps: 250,
+    nivel: 1,
+    mult: 1,
+    nombre: 'rata qla conche su mare webon ⭐⭐⭐',
+    image:
+      'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Forig06.deviantart.net%2Fcc84%2Ff%2F2012%2F218%2Fb%2Ff%2Fteemo_render__default_skin__by_aurablade-d59zqef.png&f=1&nofb=1',
+    key: 'Teemo',
+  },
+  Yummi: {
+    dps: 400,
+    nivel: 1,
+    mult: 1,
+    nombre: 'main top ⭐⭐⭐⭐',
+    image:
+      'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fvignette.wikia.nocookie.net%2Fleagueoflegends%2Fimages%2Fd%2Fd5%2FYuumi_Render.png%2Frevision%2Flatest%3Fcb%3D20190502165317&f=1&nofb=1',
+    key: 'Yummi',
+  },
+  Chad: {
+    dps: 600,
+    nivel: 1,
+    mult: 1,
+    nombre: 'representacion de ti en tus pensamientos ⭐⭐⭐⭐⭐',
+    image:
+      'https://i.kym-cdn.com/photos/images/facebook/002/220/732/0b1.png',
+    key: 'Chad',
+  },
+  Furry: {
+    dps: 1000,
+    nivel: 1,
+    mult: 1,
+    nombre: 'supuesta jugadora de genshin impact ⭐⭐⭐⭐⭐',
+    image:
+      'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.grupoarco.com.mx%2Fwp-content%2Fuploads%2Fbotargas-deportivas-y-de-escuelas-lobos.png&f=1&nofb=1',
+    key: 'Furry',
+  },
+  Energuia:{
+    dps: 1500,
+    nivel: 1,
+    mult: 1,
+    nombre: 'neko kawaii ⭐⭐⭐⭐⭐⭐',
+    image:
+      'img/neko.png',
+    key: 'Energuia',
+  }
 }
 
 const cajas = {
@@ -143,13 +188,27 @@ const cajas = {
   },
   payaso: {
     nombre: 'Caja payaso',
-    costo: 50000,
+    costo: 30000,
     items: [
       { articulo: arts['Sus'], prob: 20 },
       { articulo: arts['Payaso'], prob: 70 },
+      { articulo: arts['Teemo'], prob: 40 },
+      { articulo: arts['Chad'], prob: 15 },
     ],
     image:
       'http://assets.stickpng.com/images/5c38c7ff4d5036028cf54110.png',
+  },
+  furros: {
+    nombre: 'Furro-caja',
+    costo: 70000,
+    items: [
+      { articulo: arts['Teemo'], prob: 20 },
+      { articulo: arts['Furry'], prob: 40 },
+      { articulo: arts['Yummi'], prob: 20 },
+      { articulo: arts['Energuia'], prob: 40 },
+    ],
+    image:
+      'https://image.shutterstock.com/image-illustration/furry-blue-cube-260nw-142005637.jpg',
   },
 }
 if (localStorage.getItem('compras')) {
