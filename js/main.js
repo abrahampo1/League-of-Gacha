@@ -1,5 +1,8 @@
 function get_int(name, def = 0) {
   if (localStorage.getItem(name)) {
+    if(localStorage.getItem(name) == 'NaN'){
+      set_int(name, def)
+    }
     return parseFloat(localStorage.getItem(name))
   } else {
     localStorage.setItem(name, def)
@@ -24,6 +27,27 @@ $('.point-btn').on('click', function (params) {
   set_int('points', get_int('points') + 1, '.money-holder')
 })
 
+function fusionar(item) {
+  if (compras[item]['nivel'] >= arts[item]['fusion']) {
+    compras[item]['nivel'] = compras[item]['nivel'] - arts[item]['fusion']
+    let comprado = arts[arts[item]['update']]
+    swal({
+      text: 'Has fusionado a ' + comprado['nombre'],
+      icon: comprado['image'],
+    })
+    if (compras[comprado['key']]) {
+      compras[comprado['key']]['nivel'] = compras[comprado['key']]['nivel'] + 1
+    } else {
+      compras[comprado['key']] = comprado
+    }
+    const jsConfetti = new JSConfetti()
+    jsConfetti.addConfetti()
+    localStorage.setItem('compras', JSON.stringify(compras))
+    print_box()
+    print_ej()
+  }
+}
+
 function comprar(item) {
   let coste = cajas[item]['costo']
   if (coste <= get_int('points')) {
@@ -43,7 +67,7 @@ function comprar(item) {
       }
     })
     swal({
-      text: 'Te ha tocado: una ' + comprado['nombre'],
+      text: 'Te ha tocado: ' + comprado['nombre'],
       icon: comprado['image'],
     })
     if (compras[comprado['key']]) {
@@ -60,29 +84,54 @@ function comprar(item) {
 }
 const arts = {
   Scroom: {
-    costo: 100,
     dps: 1,
     mult: 1,
     nivel: 1,
+    fusion: 10,
+    update: 'MetaScroom',
     nombre: 'seta ⭐',
     key: 'Scroom',
     image:
       'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fterrados.es%2Fwp-content%2Fuploads%2F2013%2F12%2Fboletus_edulis.png&f=1&nofb=1',
   },
+  MetaScroom: {
+    dps: 11,
+    mult: 1,
+    nivel: 1,
+    fusion: 10,
+    update: '',
+    nombre: 'seta metalica ⭐',
+    key: 'MetaScroom',
+    image:
+      'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fvignette.wikia.nocookie.net%2Frogue-lineage%2Fimages%2Ff%2Ffd%2FCapture.JPG%2Frevision%2Flatest%3Fcb%3D20190720224034&f=1&nofb=1',
+  },
   Sus: {
     dps: 2,
     mult: 1,
+    fusion: 10,
+    update: 'Sus2',
     nivel: 1,
     nombre: 'Cosa sospechosa ⭐',
     key: 'Sus',
-    image:
-      'https://acegif.com/wp-content/uploads/2020/11/am0ngsusxh-36.gif',
+    image: 'https://acegif.com/wp-content/uploads/2020/11/am0ngsusxh-36.gif',
+  },
+  Sus2: {
+    dps: 22,
+    mult: 1,
+    fusion: 20,
+    update: '',
+    nivel: 1,
+    nombre: 'SUS ⭐⭐',
+    key: 'Sus2',
+    image: 'https://acegif.com/wp-content/uploads/2020/11/am0ngsusxh-36.gif',
   },
   Furias: {
     costo: 1000,
     dps: 20,
     mult: 1,
     nivel: 1,
+    update: 'goku2',
+    fusion: 10,
     image:
       'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fvignette.wikia.nocookie.net%2Frogue-lineage%2Fimages%2Fe%2Fed%2FHaselden.png%2Frevision%2Flatest%3Fcb%3D20191107065431&f=1&nofb=1',
     nombre: 'chupada a furias ⭐⭐',
@@ -90,7 +139,9 @@ const arts = {
   },
   Darius: {
     dps: 100,
+    update: 'Darius2',
     nivel: 1,
+    fusion: 10,
     mult: 1,
     nombre: 'abuela darius en top ⭐⭐⭐⭐',
     image:
@@ -98,26 +149,31 @@ const arts = {
     key: 'Darius',
   },
   Darius2: {
+    update: '',
     dps: 500,
+    fusion: 10,
     nivel: 1,
     mult: 1,
-    nombre: 'abuela darius en top con fantasmal e ignite (tu que miedo) ⭐⭐⭐⭐⭐⭐',
-    image:
-      'https://c.tenor.com/JlqocrEEmlMAAAAd/darius-league-of-legends.gif',
+    nombre:
+      'abuela darius en top con fantasmal e ignite (tu que miedo) ⭐⭐⭐⭐⭐⭐',
+    image: 'https://c.tenor.com/JlqocrEEmlMAAAAd/darius-league-of-legends.gif',
     key: 'Darius2',
   },
   Payaso: {
+    update: '',
     dps: 300,
+    fusion: 10,
     nivel: 1,
     mult: 1,
     nombre: 'copia exacta de ti mismo ⭐⭐⭐',
-    image:
-      'https://dbdzm869oupei.cloudfront.net/img/sticker/preview/495.png',
+    image: 'https://dbdzm869oupei.cloudfront.net/img/sticker/preview/495.png',
     key: 'Payaso',
   },
   Teemo: {
+    update: '',
     dps: 250,
     nivel: 1,
+    fusion: 10,
     mult: 1,
     nombre: 'rata qla conche su mare webon ⭐⭐⭐',
     image:
@@ -125,7 +181,9 @@ const arts = {
     key: 'Teemo',
   },
   Yummi: {
+    update: '',
     dps: 400,
+    fusion: 10,
     nivel: 1,
     mult: 1,
     nombre: 'main top ⭐⭐⭐⭐',
@@ -134,32 +192,57 @@ const arts = {
     key: 'Yummi',
   },
   Chad: {
+    update: '',
     dps: 600,
+    fusion: 10,
     nivel: 1,
     mult: 1,
     nombre: 'representacion de ti en tus pensamientos ⭐⭐⭐⭐⭐',
-    image:
-      'https://i.kym-cdn.com/photos/images/facebook/002/220/732/0b1.png',
+    image: 'https://i.kym-cdn.com/photos/images/facebook/002/220/732/0b1.png',
     key: 'Chad',
   },
   Furry: {
+    update: '',
     dps: 1000,
     nivel: 1,
+    fusion: 10,
     mult: 1,
     nombre: 'supuesta jugadora de genshin impact ⭐⭐⭐⭐⭐',
-    image:
-      'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.grupoarco.com.mx%2Fwp-content%2Fuploads%2Fbotargas-deportivas-y-de-escuelas-lobos.png&f=1&nofb=1',
+    image: 'https://i.redd.it/6g02zowzahx71.jpg',
     key: 'Furry',
   },
-  Energuia:{
+  Energuia: {
+    update: '',
     dps: 1500,
+    fusion: 10,
     nivel: 1,
     mult: 1,
     nombre: 'neko kawaii ⭐⭐⭐⭐⭐⭐',
-    image:
-      'img/neko.png',
+    image: 'img/neko.png',
     key: 'Energuia',
-  }
+  },
+  discord: {
+    update: '',
+    dps: 500,
+    nivel: 1,
+    fusion: 10,
+    mult: 1,
+    nombre: 'moderadora de discord uwu ⭐⭐⭐⭐⭐',
+    image:
+      'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2F4eHoLq_2vOA%2Fmaxresdefault.jpg&f=1&nofb=1',
+    key: 'discord',
+  },
+  goku2: {
+    update: '',
+    dps: 250,
+    nivel: 1,
+    fusion: 10,
+    mult: 1,
+    nombre: 'golpeador de mujeres ⭐⭐⭐⭐⭐',
+    image:
+      'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pngkit.com%2Fpng%2Ffull%2F393-3930198_dragon-ball-clipart-super-saiyan-goku-ssj-db.png&f=1&nofb=1',
+    key: 'goku2',
+  },
 }
 
 const cajas = {
@@ -194,6 +277,7 @@ const cajas = {
       { articulo: arts['Payaso'], prob: 70 },
       { articulo: arts['Teemo'], prob: 40 },
       { articulo: arts['Chad'], prob: 15 },
+      { articulo: arts['discord'], prob: 25 },
     ],
     image:
       'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.vippng.com%2Fpng%2Ffull%2F114-1145994_clown-png.png&f=1&nofb=1',
@@ -205,7 +289,7 @@ const cajas = {
       { articulo: arts['Teemo'], prob: 20 },
       { articulo: arts['Furry'], prob: 40 },
       { articulo: arts['Yummi'], prob: 20 },
-      { articulo: arts['Energuia'], prob: 40 },
+      { articulo: arts['Energuia'], prob: 5 },
     ],
     image:
       'https://image.shutterstock.com/image-illustration/furry-blue-cube-260nw-142005637.jpg',
@@ -242,17 +326,23 @@ function print_ej(params) {
         images += '<img src="' + value['image'] + '">'
       }
     }
-    $('#ejercito').append(`
+    if (value['nivel'] > 0) {
+      $('#ejercito').append(`
 
-          <div class="personaje">
-          <h1> ${value['nombre']} (SPS: ${lvl * value['dps']}) </h1>
-          <div class="ej">
-          ${images}
-          </div>
-            
-          </div>
-    
-    `)
+      <div class="personaje">
+      <h1> ${value['nombre']} (SPS: ${
+        lvl * value['dps']
+      }) </h1> <button class="point-btn" onclick="fusionar('${key}')">Fusionar ${
+        value['fusion']
+      }</button>
+      <div class="ej">
+      ${images}
+      </div>
+        
+      </div>
+
+`)
+    }
   })
 }
 

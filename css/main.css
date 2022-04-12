@@ -1,5 +1,6 @@
 * {
     font-family: 'Poppins', sans-serif;
+    touch-action: manipulation;
 }
 
 body{
@@ -16,6 +17,8 @@ body{
 
 #shop{
     display: flex;
+    width: 100%;
+    overflow-x: auto;
 }
 
 .money h1 {
